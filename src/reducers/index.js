@@ -31,7 +31,7 @@
 //     title: '2020東京オリンピックのお知らせ',
 //     body: '2020年の東京でオリンピックを開催します！つきましては、、、、、',
 //   }
-// ]
+// ] 
 
 const events = (state = [], action) => {
   switch(action.type){
