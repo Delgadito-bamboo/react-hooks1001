@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { useContext, useState } from 'react';
 import { CREATE_EVENT, DELETE_ALL_EVENTS } from '../actions';
+import AppContext from '../contexts/AppContext';
 
-const EventForm = ({ body, setBody, title, setTitle, dispatch, state }) => {
+const EventForm = () => {
+  const { dispatch, state } = useContext(AppContext);
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
+
   const addEvent = e => {
     e.preventDefault();
     

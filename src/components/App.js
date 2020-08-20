@@ -1,4 +1,4 @@
-import React, { useState, useReducer } from 'react';
+import React, { useReducer } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import EventForm from './EventForm';
 import EventList from './EventList';
@@ -7,14 +7,12 @@ import reducer from '../reducers';
 
 const App = () => {
   const [state, dispatch] = useReducer(reducer, []);
-  const [title, setTitle] = useState('');
-  const [body, setBody] = useState('');
 
   return (
-    <AppContext.Provider value="I am a Provider">
+    <AppContext.Provider value={ {state, dispatch} }>
       <div className="container-fluid">
-        <EventForm title={title} setTitle={setTitle} body={body} setBody={setBody} state={state} dispatch={dispatch} />
-        <EventList state={state} dispatch={dispatch}/>
+        <EventForm />
+        <EventList />
       </div>
     </AppContext.Provider>
   );
