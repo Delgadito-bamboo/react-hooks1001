@@ -1,11 +1,12 @@
 import React from 'react';
+import { CREATE_EVENT, DELETE_ALL_EVENTS } from '../actions';
 
 const EventForm = ({ body, setBody, title, setTitle, dispatch, state }) => {
   const addEvent = e => {
     e.preventDefault();
     
       dispatch({
-        type:'CREATE_EVENT',
+        type: CREATE_EVENT,
         title,
         body
       });
@@ -21,7 +22,7 @@ const EventForm = ({ body, setBody, title, setTitle, dispatch, state }) => {
     
     if(result)
     dispatch({
-      type: 'DELETE_ALL_EVENTS'
+      type: DELETE_ALL_EVENTS
     })
   };
 
